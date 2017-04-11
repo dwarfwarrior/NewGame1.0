@@ -27,23 +27,16 @@ public class Action {
         Scanner scanner = new Scanner(System.in);
         int action;
         System.out.println("You really want to exit?");
-        while (true){
-            System.out.println("If yes - type 1, if no - type 0");
+        while (true) {
+            System.out.println("0 - no, 1 - yes");
             action = scanner.nextInt();
             switch (action) {
+                case 0: return false;
                 case 1:
                     System.out.println("Goodbye!");
-                    return false;
-                case 0:
-                    Main.tital();
-                    return false;
-                default:
-                    System.err.println("Try again");
-                    break;
-
+                    return true;
+                default: System.err.println("Try again");
             }
         }
-
     }
-
 }
