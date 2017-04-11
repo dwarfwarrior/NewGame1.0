@@ -4,13 +4,10 @@ import sourth.action.Action;
 
 import java.util.Scanner;
 
-/**
- * Created by dwarfawrrior on 3/4/2017.
- */
 public class Main {
-    static int action;
-    public static boolean tital(){
+    public static void tital() {
         Scanner scanner = new Scanner(System.in);
+        int action;
         while (true){
             System.out.println("What to do");
             System.out.println("If walk - type 1");
@@ -20,23 +17,19 @@ public class Main {
             action = scanner.nextInt();
             switch (action) {
                 case 0:
-                    Action.shutDownTheGame();
-                    return false;
-
+                    if (Action.shutDownTheGame()) return;
+                    else break;
                 case 1:
                     Action.walk();
-                    return false;
+                    break;
                 case 2:
                     Action.fight();
-                    return false;
+                    break;
                 case 3:
                     Action.talk();
-                    return false;
-                default:
-                    System.err.println("Try again");
                     break;
+                default: System.err.println("Try again");
             }
         }
-
     }
 }
