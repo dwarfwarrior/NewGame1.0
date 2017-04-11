@@ -10,7 +10,7 @@ public class Start {
     public static void start(){
 //        CreateCharacter createCharacter = new CreateCharacter();
 //        createCharacter.createCharacter();
-        sourth.menu.Main.tital(true);
+        sourth.menu.Main.tital();
 
 
     }

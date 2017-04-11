@@ -9,9 +9,9 @@ import java.util.Scanner;
  */
 public class Main {
     static int action;
-    public static void tital(boolean check){
+    public static boolean tital(){
         Scanner scanner = new Scanner(System.in);
-        while (check == true){
+        while (true){
             System.out.println("What to do");
             System.out.println("If walk - type 1");
             System.out.println("If fight - type 2");
@@ -20,22 +20,18 @@ public class Main {
             action = scanner.nextInt();
             switch (action) {
                 case 0:
-                    Action.shutDownTheGame(true);
-                    check = false;
-                    break;
+                    Action.shutDownTheGame();
+                    return false;
 
                 case 1:
                     Action.walk();
-                    check = false;
-                    break;
+                    return false;
                 case 2:
                     Action.fight();
-                    check = false;
-                    break;
+                    return false;
                 case 3:
                     Action.talk();
-                    check = false;
-                    break;
+                    return false;
                 default:
                     System.err.println("Try again");
                     break;
